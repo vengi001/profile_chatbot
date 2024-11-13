@@ -1,0 +1,115 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "Hi there", "Howdy"],
+            "responses": ["Hello!", "Hi, how can I help you?", "Greetings!", "Hi, nice to have a conversation with you"],
+            "suggestion": ["Self Introduction"]
+        },
+        {
+            "tag": "greet-questions",
+            "patterns": ["How are you?", "How are you doing?", "How's it going?"],
+            "responses": ["I'm good, thank you! How can I assist you today?"],
+            "suggestion": ["Self Introduction"]
+        },
+        {   
+            "tag": "about_me",
+            "patterns": ["Tell me about yourself", "Who are you?", "What do you do?", "Introduce yourself", "self-intro", "self intro", "self introduction"],
+            "responses": [
+                "As a Python developer with nearly three years of experience, I excel in backend development, machine learning, and natural language processing (NLP). I have solid knowledge of databases (MongoDB, PostgreSQL, MySQL) and version control (Git) and am currently diving into AI model research.",
+                "With almost three years of experience as a Python developer, I bring strong skills in backend programming, machine learning, and NLP. I have practical experience working with MongoDB, PostgreSQL, MySQL, and Git. My focus now is on exploring cutting-edge AI models to deepen my expertise.",
+                "I am a Python developer with nearly three years of experience specializing in backend development, machine learning, and NLP. I have hands-on expertise with databases like MongoDB, PostgreSQL, and MySQL, and I'm proficient in version control with Git. I'm currently expanding my skills by exploring advanced AI models."
+            ],
+            "suggestion": ["Experience", "Skills", "Projects"]
+        },
+        {
+            "tag": "experience",
+            "patterns": ["What is your experience?", "Tell me about your work experience", "What kind of work have you done?", "tell about your experience", "Experience"],
+            "responses": [
+                "I have nearly 3 years of experience in Python development, working on backend systems, chatbots, and automation.",
+                "I've developed chatbots, backend services, and also worked with NLP."
+            ],
+            "suggestion": ["Skills", "Projects", "Education"]
+        },
+        {
+            "tag": "skills",
+            "patterns": ["What are your skills?", "Tell me about your skills", "What technologies do you know?", "skills"],
+            "responses": [
+                "I possess proficiency in Python, along with frameworks such as Flask, FastAPI, and Django, as well as expertise in natural language processing, machine learning, and backend development.",
+                "Some of my skills include Python, chatbot development, working with APIs, NLP, and FusionAuth integration.",
+                "My skill set includes Python programming, chatbot development, API integration, natural language processing, and FusionAuth integration.",
+                "I am well-versed in Python and its frameworks, including Flask, FastAPI, and Django, with a strong focus on NLP, machine learning, and backend development",
+                "I have developed competencies in Python, chatbot creation, API interactions, natural language processing, and the integration of FusionAuth into projects."
+            ],
+            "suggestion": ["Experience", "Projects", "Education"]
+        },
+        {
+            "tag": "projects",
+            "patterns": [
+                "What are the projects you have done?", "Tell me about your projects", 
+                "Have you worked on chatbots?", "What kind of projects do you work on?",
+                "projects"
+            ],
+            "responses": [
+                "I have contributed to various projects, including a payroll processing website, an EdTech proctor control system with proctor score calculations, and a digital imagery project focused on interactive image conversion. Additionally, I have worked on PDF template rendering, developed conversational AI, and implemented cancer cell classification using machine learning algorithms such as XGBoost, KNN, logistic regression, decision trees, and random forests.",
+                "My project experience includes developing a payroll processing website, creating an EdTech proctor control system that includes proctor score calculations, and converting digital imagery into interactive images. I have also worked on PDF template rendering, built conversational AI solutions, and conducted cancer cell classification using machine learning algorithms like XGBoost, KNN, logistic regression, decision trees, and random forests.",
+                "I have worked on a range of projects, including a payroll processing website, an EdTech proctor control system with proctor score calculation, and digital imagery projects involving interactive image conversion. My experience also includes PDF template rendering, developing conversational AI, and classifying cancer cells using machine learning algorithms such as XGBoost, KNN, logistic regression, decision trees, and random forests.",
+                "Some of my recent projects include a conversational chatbot, Google IdP integration using FusionAuth, and PDF generation with WeasyPrint."
+            ],
+            "suggestion": ["Experience", "Education", "Contact Info"]
+        },
+        {
+            "tag": "education",
+            "patterns": ["What is your educational background?", "Tell me about your education", "Where did you study?", "education"],
+            "responses": [
+                "I hold a degree in Electronics and Communication and have obtained certifications in Python for Data Science, Natural Language Processing, Machine Learning Fundamentals, AWS Lambda, and more.",
+                "I possess a degree in Electronics and Communication, along with certifications in Python for Data Science, NLP, Machine Learning Fundamentals, and AWS Lambda, among others.",
+                "With a degree in Electronics and Communication, I have also completed various certifications, including Python for Data Science, NLP, Machine Learning Fundamentals, and AWS Lambda."
+            ],
+            "suggestion": ["Experience", "Availability", "Contact Info"]
+        },
+        {
+            "tag": "contact_info",
+            "patterns": ["How can I contact you?", "What is your email?", "How do I get in touch?", "contact details", "contact info"],
+            "responses": [
+                "You can reach me at vengateswarikannan235@gmail.com",
+                "Feel free to contact me through my email: vengateswarikannan235@gmail.com."
+            ],
+            "suggestion": ["Experience", "Availability", "Hobbies"]
+        },
+        {
+            "tag": "availability",
+            "patterns": ["Are you available for projects?", "Can we work together?", "Are you open for collaboration?", "Availability"],
+            "responses": [
+                "Yes, I'm open to new projects and collaborations! Let's discuss further.",
+                "I'm currently available for projects and freelance opportunities. Feel free to reach out!"
+            ],
+            "suggestion": ["Experience", "Availability", "Skills"]
+        },
+        {
+            "tag": "hobbies",
+            "patterns": ["What are your hobbies?", "What do you do in your free time?", "Do you have any interests?", "hobby", "hobbies"],
+            "responses": [
+                "I enjoy learning new technologies, working on open-source projects, and exploring AI and ML tools.",
+                "In my free time, I love building side projects, reading about AI."
+            ],
+            "suggestion": ["Experience", "Availability", "Skills"]
+        },
+        {
+            "tag": "end-conversation",
+            "patterns": ["Bye", "Thank you", "Thanks", "Goodbye", "See you later", "Tata"],
+            "responses": ["Goodbye! Take care.", "See you next time!", "Happy to connect with you :)"]
+        },
+        {
+            "tag": "color",
+            "patterns":["Whats's your favourite color", "fav color", "which is your fav colour?", "color", "colour"],
+            "responses": ["I like sky-blue which resembles the calm mindset", "Could you rephrase that?"]
+        },
+        {
+            "tag": "no_answer",
+            "patterns": [],
+            "responses": ["Sorry, I don't understand.", "Could you rephrase that?"],
+            "suggestion": ["Hi", "Tell me about yourself", "Projects", "Experience"]
+        }
+    ]
+}
