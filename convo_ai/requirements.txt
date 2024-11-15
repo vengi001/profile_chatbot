@@ -6,7 +6,6 @@ numpy==1.26.3
 requests==2.32.3
 tomli==2.1.0
 tomlkit==0.13.2
-torch==2.0.0
 tqdm==4.67.0
 urllib3==2.2.3
 
