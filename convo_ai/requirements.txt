@@ -8,4 +8,5 @@ tomli==2.1.0
 tomlkit==0.13.2
 tqdm==4.67.0
 urllib3==2.2.3
+torch==2.0.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
