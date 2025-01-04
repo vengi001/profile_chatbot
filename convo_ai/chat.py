@@ -1,7 +1,8 @@
+
 import random
 import json
 import torch
-import os
+import numpy as np
 from flask import Flask, request, render_template
 from flask_cors import CORS
 from model import NeuralNet
@@ -10,24 +11,28 @@ from utils import tokenize, bag_of_words
 app = Flask(__name__)
 CORS(app)
 
-# Lazy-loading model components
+# Lazy-loaded components
 model = None
 all_words = []
 tags = []
+intents = None
 model_path = "model.pth"
 intents_path = "intents.json"
 
-# Load intents
-with open(intents_path, 'r') as intent_data:
-    intents = json.load(intent_data)
-
 bot_name = "ChatBot"
 
+def load_intents():
+    """Lazy-load intents file."""
+    global intents
+    if intents is None:
+        with open(intents_path, 'r') as intent_data:
+            intents = json.load(intent_data)
+
 def load_model():
-    """Lazy-load the model to save memory during idle time."""
+    """Lazy-load the model to save memory."""
     global model, all_words, tags
     if model is None:
-        data = torch.load(model_path)
+        data = torch.load(model_path, map_location=torch.device('cpu'))  # Load on CPU
         input_size = data["input_size"]
         hidden_size = data["hidden_size"]
         output_size = data["output_size"]
@@ -41,8 +46,9 @@ def load_model():
 
 def get_response(tag):
     """Fetch response and suggestions for the given tag."""
+    load_intents()
     for intent in intents["intents"]:
-        if tag in intent["tag"]:
+        if tag == intent["tag"]:
             response = random.choice(intent["responses"])
             suggestion = intent.get("suggestion", "")
             return response, suggestion
@@ -57,6 +63,8 @@ def home():
 def chat():
     """Handle chat requests."""
     load_model()  # Ensure model is loaded only when needed
+    load_intents()  # Ensure intents are loaded only when needed
+
     data = request.get_json()
     sentence = data.get('message', '')
 
@@ -64,8 +72,8 @@ def chat():
     threshold = 0.5 if len(sentence.split()) == 1 else 0.65
 
     # Tokenize and predict
-    tokenize_sentence = tokenize(sentence)
-    bow = bag_of_words(tokenize_sentence, all_words)
+    tokenized_sentence = tokenize(sentence)
+    bow = bag_of_words(tokenized_sentence, all_words).astype(np.float16)  # Use smaller data type
     bow = torch.from_numpy(bow).float().unsqueeze(0)
     output = model(bow)
     probs = torch.softmax(output, dim=1)
@@ -82,7 +90,4 @@ def chat():
         return {'response': response, 'suggestion': fallback.get("suggestion", "")}
 
 if __name__ == "__main__":
-    import nltk
-    nltk.download('punkt_tab')
-    nltk.download('wordnet') 
     app.run(host='0.0.0.0', port=5001, debug=False)

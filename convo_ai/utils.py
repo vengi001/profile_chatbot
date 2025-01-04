@@ -1,29 +1,29 @@
+# from nltk.stem.porter import PorterStemmer
+
 import nltk
-from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 
-stemmer = PorterStemmer()
+nltk.download('punkt', quiet=True)
+nltk.download('wordnet', quiet=True)
+
 lemmatizer = WordNetLemmatizer()
-
-
 def tokenize(sentence):
-    tokenized_sentence = nltk.word_tokenize(sentence)
-    return tokenized_sentence
-
+    """Tokenize a sentence into words."""
+    return nltk.word_tokenize(sentence)
 
 def bag_of_words(tokenized_sentence, all_words):
-    tokenized_stemmer = [lemmatizer.lemmatize(word.lower()) for word in tokenized_sentence]
-    bag_of_words = np.zeros(len(all_words), dtype=np.float32)
-    
-    for index, word in enumerate(all_words):
-        if word in tokenized_stemmer:
-            bag_of_words[index] = 1.0
-    
-    return bag_of_words
+    """Create a bag-of-words representation."""
+    tokenized_sentence = [lemmatizer.lemmatize(word.lower()) for word in tokenized_sentence]
+    bag = np.zeros(len(all_words), dtype=np.float32)
+    for idx, word in enumerate(all_words):
+        if word in tokenized_sentence:
+            bag[idx] = 1.0
+    return bag
 
-def stem(word):
-    return stemmer.stem(word.lower())
+# stemmer = PorterStemmer()
+# def stem(word):
+#     return stemmer.stem(word.lower())
 
-def lemmatize(word):
-    return lemmatizer.lemmatize(word.lower())
+# def lemmatize(word):
+#     return lemmatizer.lemmatize(word.lower())
