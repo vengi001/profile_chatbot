@@ -4,6 +4,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 
+nltk.download('punkt_tab', quiet=True)
+nltk.download('wordnet', quiet=True)
 
 lemmatizer = WordNetLemmatizer()
 def tokenize(sentence):
