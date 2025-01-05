@@ -7,6 +7,8 @@ from flask import Flask, request, render_template
 from flask_cors import CORS
 from model import NeuralNet
 from utils import tokenize, bag_of_words
+import os
+
 
 app = Flask(__name__)
 CORS(app)
@@ -16,8 +18,10 @@ model = None
 all_words = []
 tags = []
 intents = None
-model_path = "model.pth"
-intents_path = "intents.json"
+CNST = os.getenv('CNST')
+print(CNST)
+model_path = "model.pth" if CNST == 'venki'  else "model1.pth"
+intents_path = "intents.json" if CNST == 'venki'  else "intents1.json"
 
 bot_name = "ChatBot"
 

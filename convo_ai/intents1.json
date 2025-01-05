@@ -1,0 +1,111 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "Hi there", "Howdy"],
+            "responses": ["Hello!", "Hi, how can I help you?", "Greetings!", "Hi, nice to have a conversation with you"],
+            "suggestion": ["Self Introduction"]
+        },
+        {
+            "tag": "greet-questions",
+            "patterns": ["How are you?", "How are you doing?", "How's it going?"],
+            "responses": ["I'm good, thank you! How can I assist you today?"],
+            "suggestion": ["Self Introduction"]
+        },
+        {   
+            "tag": "about_me",
+            "patterns": ["Tell me about yourself", "Who are you?", "What do you do?", "Introduce yourself", "self-intro", "self intro", "self introduction"],
+            "responses": [
+                "As a frontend developer with nearly four years of experience, I specialize in Angular and Ionic, with additional skills in React, HTML/CSS, JavaScript, and TypeScript. I've worked on live projects like ORTA, HBOT, CCUBE, and Explora Shoppe, delivering high-quality user interfaces and experiences.",
+                "With almost four years of experience as a frontend developer, I excel in Angular and Ionic development, complemented by skills in React, HTML/CSS, JavaScript, TypeScript, and Bootstrap. My project portfolio includes ORTA, HBOT, CCUBE, and Explora Shoppe.",
+                "I am a frontend developer with nearly four years of experience, focusing on Angular and Ionic while also having expertise in React, HTML/CSS, JavaScript, TypeScript, and Bootstrap. I've successfully contributed to live projects like ORTA, HBOT, CCUBE, and Explora Shoppe."
+            ],
+            "suggestion": ["Experience", "Skills", "Projects"]
+        },
+        {
+            "tag": "experience",
+            "patterns": ["What is your experience?", "Tell me about your work experience", "What kind of work have you done?", "tell about your experience", "Experience"],
+            "responses": [
+                "I have nearly 4 years of experience in frontend development, working extensively with Angular, Ionic, and React.",
+                "I've developed dynamic web and mobile applications, worked on live projects, and created engaging user interfaces using Angular, Ionic, and other frontend technologies."
+            ],
+            "suggestion": ["Skills", "Projects", "Education"]
+        },
+        {
+            "tag": "skills",
+            "patterns": ["What are your skills?", "Tell me about your skills", "What technologies do you know?", "skills"],
+            "responses": [
+                "I am proficient in Angular, Ionic, React, HTML/CSS, JavaScript, TypeScript, and Bootstrap. I also have experience in building responsive web and mobile applications.",
+                "My skill set includes Angular, Ionic, React, HTML/CSS, JavaScript, TypeScript, and Bootstrap. I specialize in creating dynamic and efficient user interfaces.",
+                "I specialize in Angular and Ionic development, with additional expertise in React, HTML/CSS, JavaScript, TypeScript, and Bootstrap."
+            ],
+            "suggestion": ["Experience", "Projects", "Education"]
+        },
+        {
+            "tag": "projects",
+            "patterns": [
+                "What are the projects you have done?", "Tell me about your projects", 
+                "Have you worked on live projects?", "What kind of projects do you work on?",
+                "projects"
+            ],
+            "responses": [
+                "I have worked on several live projects, including ORTA (a time management tool for managing project tasks), HBOT (highlighting ESI on PDFs and checking for discrepancies), CCUBE (month-on-month compliance automation with document validation and issue correction), and Explora Shoppe (an e-commerce platform built with Ionic and Angular).",
+                "My project experience includes ORTA (a project task management tool), HBOT (ESI highlighting and discrepancy checking), CCUBE (compliance automation with document validation), and Explora Shoppe (an e-commerce platform using Ionic and Angular).",
+                "I have contributed to multiple live projects, such as ORTA (time management tool), HBOT (ESI discrepancy checker), CCUBE (compliance automation), and Explora Shoppe (e-commerce platform)."
+            ],
+            "suggestion": ["Experience", "Education", "Contact Info"]
+        },
+        {
+            "tag": "education",
+            "patterns": ["What is your educational background?", "Tell me about your education", "Where did you study?", "education"],
+            "responses": [
+                "I hold a BE degree in Electronics and Communication Engineering.",
+                "I have completed a BE in Electronics and Communication Engineering, which laid the foundation for my technical expertise."
+            ],
+            "suggestion": ["Experience", "Availability", "Contact Info"]
+        },
+        {
+            "tag": "contact_info",
+            "patterns": ["How can I contact you?", "What is your email?", "How do I get in touch?", "contact details", "contact info"],
+            "responses": [
+                "You can reach me at sthamotharan9@gmail.com",
+                "Feel free to contact me through my email: sthamotharan9@gmail.com."
+            ],
+            "suggestion": ["Experience", "Availability", "Hobbies"]
+        },
+        {
+            "tag": "availability",
+            "patterns": ["Are you available for projects?", "Can we work together?", "Are you open for collaboration?", "Availability"],
+            "responses": [
+                "Yes, I'm open to new projects and collaborations! Let's discuss further.",
+                "I'm currently available for projects and freelance opportunities. Feel free to reach out!"
+            ],
+            "suggestion": ["Experience", "Availability", "Skills"]
+        },
+        {
+            "tag": "hobbies",
+            "patterns": ["What are your hobbies?", "What do you do in your free time?", "Do you have any interests?", "hobby", "hobbies"],
+            "responses": [
+                "I enjoy exploring new frontend frameworks, working on side projects, and learning about UI/UX design trends.",
+                "In my free time, I like experimenting with Angular and Ionic features, exploring React libraries, and enhancing my frontend skills."
+            ],
+            "suggestion": ["Experience", "Availability", "Skills"]
+        },
+        {
+            "tag": "end-conversation",
+            "patterns": ["Bye", "Thank you", "Thanks", "Goodbye", "See you later", "Tata"],
+            "responses": ["Goodbye! Take care.", "See you next time!", "Happy to connect with you :)"]
+        },
+        {
+            "tag": "color",
+            "patterns": ["What's your favourite color", "fav color", "which is your fav colour?", "color", "colour"],
+            "responses": ["I like blue, which reflects my calm and focused mindset.", "Could you rephrase that?"]
+        },
+        {
+            "tag": "no_answer",
+            "patterns": [],
+            "responses": ["Sorry, I don't understand.", "Could you rephrase that?"],
+            "suggestion": ["Hi", "Tell me about yourself", "Projects", "Experience"]
+        }
+    ]
+}
